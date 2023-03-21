@@ -92,7 +92,8 @@ const Post = ({
 }) => {
   return <View style={styles.postContainer}>
       <Image source={post.imageSrc} style={styles.image} />
-      <Text style={styles.archiveDate}>{post.archiveDate}</Text>
+      <Text style={styles.archiveDate}>hard code
+    </Text>
     </View>;
 };
 

@@ -1,7 +1,9 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import { Text, StyleSheet, View, ScrollView, SafeAreaView, Image, TextInput, Pressable } from "react-native";
 
-const AddPaymentMethodScreen = params => {
+const AddPaymentMethodScreen = () => {
+  const navigation = useNavigation();
   const [paymentOption, setPaymentOption] = useState("");
   const [cardNumber, setCardNumber] = useState("");
   const [cardExpiry, setCardExpiry] = useState("");
@@ -46,7 +48,11 @@ const AddPaymentMethodScreen = params => {
           </View>
         </View>
         <View style={styles.btnContainer}>
-          <Pressable style={styles.btn}>
+          <Pressable style={styles.btn} onPress={() => {
+          navigation.navigate("AddReviewScreen3", {
+            test: "test"
+          });
+        }}>
             <Text style={styles.btnText}>Continue</Text>
             <Image source={require("./assets/arrow.png")} style={styles.arrow} />
           </Pressable>
